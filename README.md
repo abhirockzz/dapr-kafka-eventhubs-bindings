@@ -1,0 +1,1 @@
+An example of how to integrate Kafka in your application by using it as a Dapr binding. It uses Azure Event Hubs Kafka compatible endpoint.

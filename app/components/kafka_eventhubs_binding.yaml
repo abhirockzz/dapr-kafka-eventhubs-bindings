@@ -1,0 +1,22 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: timebound
+spec:
+  type: bindings.kafka
+  metadata:
+    # Kafka broker connection setting
+    - name: brokers
+      value: [replace]
+    # consumer configuration: topic and consumer group
+    - name: topics
+      value: [replace]
+    - name: consumerGroup
+      value: $Default
+    # auth configuration: common to producer and consumer
+    - name: authRequired
+      value: "true"
+    - name: saslUsername
+      value: $ConnectionString
+    - name: saslPassword
+      value: [replace]
